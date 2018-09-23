@@ -1,5 +1,5 @@
 # RecyclerViewAdapterHelper
-A quick base quick adapter of RecyclerView.It bases on [BaseRecyclerViewAdapterHelper](https://raw.githubusercontent.com/CymChad/BaseRecyclerViewAdapterHelper).
+A quick base quick adapter of RecyclerView.It bases on [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper).
 # proguard-rules.pro
 ```
 -keep class com.chad.library.adapter.** {
