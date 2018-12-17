@@ -75,6 +75,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 /**
  * https://github.com/CymChad/BaseRecyclerViewAdapterHelper
  */
+// TODO 修改处
 public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends RecyclerView.Adapter<K> implements LifecycleObserver {
 
     //load more
@@ -178,41 +179,36 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
      */
     private LinkedHashSet<Integer> mChildItemIds;
 
+    // TODO 修改处↓
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     protected void onCreate(@NonNull LifecycleOwner owner) {
-        Log.e(TAG, "onCreate: ");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     protected void onStart(@NonNull LifecycleOwner owner) {
-        Log.e(TAG, "onStart: ");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     protected void onResume(@NonNull LifecycleOwner owner) {
-        Log.e(TAG, "onResume: ");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     protected void onPause(@NonNull LifecycleOwner owner) {
-        Log.e(TAG, "onPause: ");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     protected void onStop(@NonNull LifecycleOwner owner) {
-        Log.e(TAG, "onStop: ");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     protected void onDestroy(@NonNull LifecycleOwner owner) {
         clearDisposables();
-        Log.e(TAG, "onDestroy: ");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
     protected void onLifecycleChanged(@NonNull LifecycleOwner owner, @NonNull Lifecycle.Event event) {
-        Log.e(TAG, "onLifecycleChanged: ");
     }
+    // TODO 修改处↑
 
     protected RecyclerView getRecyclerView() {
         return mRecyclerView;
@@ -1045,6 +1041,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void bindViewClickListener(final BaseViewHolder baseViewHolder) {
         if (baseViewHolder == null) {
             return;
@@ -1054,6 +1051,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
             return;
         }
         if (getOnItemClickListener() != null) {
+            // TODO 修改处
             addDisposable(view.getId(), RxViewUtils.click(view).subscribe(o -> {
                 Log.e(TAG, "bindViewClickListener: " + (baseViewHolder.getLayoutPosition() - getHeaderLayoutCount()));
                 setOnItemClick(view, baseViewHolder.getLayoutPosition() - getHeaderLayoutCount());

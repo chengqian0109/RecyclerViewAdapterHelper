@@ -385,6 +385,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
             if (!view.isClickable()) {
                 view.setClickable(true);
             }
+            // TODO 修改处
             // 添加防抖
             adapter.addDisposable(viewId, RxViewUtils.click(view).subscribe(o -> {
                 if (adapter.getOnItemChildClickListener() != null) {
