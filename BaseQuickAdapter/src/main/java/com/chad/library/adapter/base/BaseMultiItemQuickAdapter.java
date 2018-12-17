@@ -2,7 +2,6 @@ package com.chad.library.adapter.base;
 
 import android.support.annotation.IntRange;
 import android.support.annotation.LayoutRes;
-import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.ViewGroup;
 
